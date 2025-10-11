@@ -1,48 +1,63 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF--8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Mustafa Baran - Kişisel Web Sayfası</title>
-    
+    <title>Mustafa Baran - Portfolyo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol/ol.css">
     <link rel="stylesheet" href="css/stil.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <h1>Mustafa Baran</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Anasayfa</a></li>
-                <li><a href="teknolojiler.html">Yetenekler</a></li>
-                <li><a href="projelerim.html">Staj Deneyimleri</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="container">
+        <header class="hero">
+            <div class="hero-left">
+                <div class="hero-content">
+                    <h1>Mustafa Baran</h1>
+                    <p class="subtitle">Geomatik Mühendisi & Geliştirici</p>
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Anasayfa</a></li>
+                            <li><a href="teknolojiler.html">Yetenekler</a></li>
+                            <li><a href="projelerim.html">Projeler</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="hero-right">
+                <img src="images/hero-image.jpg" alt="Uzay temalı dikey görsel">
+            </div>
+        </header>
 
-    <main>
-        <section id="hakkimda">
-            <h2>Hakkımda</h2>
-            <p>
-                [cite_start]Hacettepe Üniversitesi Geomatik Mühendisliği dördüncü sınıf öğrencisiyim. [cite: 21] [cite_start]Kendimi geliştirebileceğim ve dahil olduğum projelere katkı sağlayabileceğim bir iş veya uzun dönemli staj arıyorum. [cite: 7] [cite_start]Takım çalışmasına yatkınım ve çalıştığım ortama değer katmayı hedefliyorum. [cite: 5]
-            </p>
-        </section>
+        <main>
+            <section id="hakkimda">
+                <h2>Hakkımda</h2>
+                <p>
+                    Öğrenim sürecim boyunca stajlar ve farklı projelerle pratik deneyim kazandım. Özellikle Python, QGIS ve AutoCAD Civil3D gibi modern teknolojileri kullanarak coğrafi veri analizi ve modelleme konularında kendimi geliştiriyorum. Amacım, bu yeteneklerimi kullanarak yenilikçi projelere katkıda bulunmak ve alanımda uzmanlaşmaktır.
+                </p>
+            </section>
+            
+            <section id="iletisim">
+                <h2>İletişim & Konum</h2>
+                 <ul>
+                    <li><strong>E-posta:</strong> mustafabarran5@gmail.com</li>
+                    <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mustafa-baran-85a4a5224/" target="_blank">linkedin.com/in/mustafa-baran</a></li>
+                </ul>
+                <div id="map" class="map-container"></div>
+            </section>
+        </main>
+        
+        <footer>
+             <p>© 2025 Mustafa Baran. Tüm hakları saklıdır.</p>
+        </footer>
+    </div>
 
-        <section id="iletisim">
-            <h2>İletişim Bilgileri</h2>
-            <ul>
-                <li><strong>E-posta:</strong> mustafabarran5@gmail.com</li>
-                <li><strong>Telefon:</strong> 0545 640 8082</li>
-                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mustafa-baran-85a4a5224/" target="_blank">linkedin.com/in/mustafa-baran</a></li>
-                [cite_start]<li><strong>Adres:</strong> Mamak/ANKARA [cite: 4]</li>
-            </ul>
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2025 Mustafa Baran. Tüm hakları saklıdır.</p>
-    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/ol/dist/ol.js"></script>
+    
+    <script src="js/harita.js" defer></script>
 
 </body>
 </html>
