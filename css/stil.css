@@ -3,9 +3,10 @@
     --bg-dark: #050505;
     --text-light: #a3a3a3;
     --text-bright: #f0f0f0;
-    --accent-gold: #D4AF37; /* Vurgu için altın sarısı */
-    --border-color: rgba(255, 255, 255, 0.15);
-    --font-main: 'Inter', sans-serif;
+    --accent-gold: #D4AF37;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --glow-color: rgba(212, 175, 55, 0.1); /* Altın rengi parlama */
+    --font-main: 'Poppins', sans-serif;
 }
 
 * {
@@ -14,11 +15,41 @@
     box-sizing: border-box;
 }
 
+/* --- KATMANLI ARKA PLAN --- */
 body {
     font-family: var(--font-main);
-    background-color: var(--bg-dark);
+    background-color: var(--bg-dark); /* Temel siyah renk */
     color: var(--text-light);
+    position: relative;
+    z-index: 0;
+}
+
+/* Katman 1: Samanyolu Görseli (En Arka) */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    filter: brightness(1.1);
+    z-index: -2;
+}
+
+/* Katman 2: Noktalı Desen (Ortada) */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="1" cy="1" r="1" fill="%231A1A1A"/></svg>');
+    z-index: -1;
 }
 
 .container {
@@ -27,12 +58,14 @@ body {
     padding: 0 40px;
 }
 
-/* --- YENİ HERO (HEADER) BÖLÜMÜ --- */
+/* --- HERO (HEADER) BÖLÜMÜ --- */
 .hero {
+    position: relative;
     display: flex;
     min-height: 90vh;
     align-items: center;
     border-bottom: 1px solid var(--border-color);
+    overflow: hidden;
 }
 
 .hero-left {
@@ -43,7 +76,7 @@ body {
 .hero-content h1 {
     font-size: 4.5rem;
     color: var(--text-bright);
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.1;
     margin-bottom: 15px;
 }
@@ -58,8 +91,10 @@ body {
 .hero-right {
     flex: 0.8;
     height: 70vh;
-    overflow: hidden;
-    border-radius: 10px;
+
+    /* Sihirli Kısım: Kenarları Yumuşatan Dairesel Maske */
+    -webkit-mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
+    mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
 }
 
 .hero-right img {
@@ -68,32 +103,92 @@ body {
     object-fit: cover;
 }
 
-/* --- MODERN NAVİGASYON --- */
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
+/* --- TAKIM YILDIZI NAVİGASYON --- */
+nav {
+    margin-top: 60px;
+    position: relative;
+    height: 150px;
 }
 
+nav ul {
+    list-style: none;
+    position: relative;
+    height: 100%;
+}
+
+nav li {
+    position: absolute;
+}
+
+nav li:nth-child(1) { top: 20%; left: 10%; }
+nav li:nth-child(2) { top: 65%; left: 45%; }
+nav li:nth-child(3) { top: 10%; left: 80%; }
+
 nav a {
+    position: relative;
     color: var(--text-light);
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    padding-left: 15px;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-gold);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent-gold), 0 0 20px var(--accent-gold);
+    transition: transform 0.3s ease;
 }
 
 nav a:hover {
-    color: var(--accent-gold);
+    color: var(--text-bright);
+    text-shadow: 0 0 5px var(--accent-gold);
+}
+
+nav a:hover::before {
+    transform: translateY(-50%) scale(1.3);
+}
+
+nav li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.25);
+    height: 1px;
+    transform-origin: left center;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+nav li:nth-child(1)::after {
+    width: 200px;
+    transform: rotate(20deg);
+    top: 30px;
+    left: 80px;
+}
+
+nav li:nth-child(2)::after {
+    width: 190px;
+    transform: rotate(-35deg);
+    top: -5px;
+    left: 100px;
 }
 
 /* --- ANA İÇERİK STİLLERİ --- */
 main {
-    padding: 80px 0;
+    /* Üst boşluğu 80px'den 40px'e düşürdük, alt boşluk aynı kaldı */
+    padding: 40px 0 80px 0;
 }
 
 section {
-    padding: 40px 0;
+    /* Section'ların kendi üst boşluğunu sıfırladık, sadece altlarında boşluk var */
+    padding: 0 0 40px 0;
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -101,7 +196,7 @@ h2 {
     font-size: 2.5rem;
     color: var(--text-bright);
     margin-bottom: 30px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 p {
@@ -114,7 +209,7 @@ p {
 footer {
     text-align: center;
     padding: 40px 0;
-    border-top: 1px solid var(--border-color); /* Son section'dan sonra çizgi olmadığı için footer'a ekledim */
+    border-top: 1px solid var(--border-color);
 }
 
 /* --- İÇ SAYFA HEADER STİLLERİ --- */
@@ -128,11 +223,8 @@ footer {
     font-size: 3rem;
     margin-bottom: 20px;
     color: var(--text-bright);
+    font-weight: 500;
 }
-
-/* ======================================================= */
-/* === EKSİK OLAN VE YENİ EKLENEN STİLLER BAŞLANGIÇ === */
-/* ======================================================= */
 
 /* --- YETENEKLER SAYFASI TABLO STİLLERİ --- */
 .yetenek-tablosu {
@@ -145,7 +237,7 @@ footer {
 .yetenek-tablosu td {
     padding: 20px 15px;
     text-align: left;
-    vertical-align: middle; /* İçeriği dikey olarak ortalar */
+    vertical-align: middle;
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -154,38 +246,72 @@ footer {
     font-weight: 500;
 }
 
-/* GÖRSELLERİ KONTROL ALTINA ALAN KISIM */
 .logo-img {
-    width: 50px;       /* Genişliği 50px'e sabitliyoruz */
-    height: 50px;      /* Yüksekliği 50px'e sabitliyoruz */
-    object-fit: contain; /* Resmin oranını bozmadan bu kutuya sığmasını sağlıyoruz */
-    background-color: #fff; /* Şeffaf arka planlı logoların görünmesi için beyaz arka plan */
-    border-radius: 8px; /* Kenarları hafif yuvarlat */
-    padding: 5px; /* İçeriden hafif boşluk */
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 5px;
 }
 
 /* --- PROJELER SAYFASI KART STİLLERİ --- */
+
 .proje-karti {
+    display: flex; /* Logo ve detayı yan yana getirir */
+    align-items: center; /* Dikey olarak ortalar */
+    gap: 25px; /* Aralarına boşluk koyar */
     border: 1px solid var(--border-color);
     border-radius: 10px;
     padding: 25px;
     margin-bottom: 25px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5), inset 0 0 1px 1px rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.proje-karti h3 {
+.proje-karti:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 35px var(--glow-color), inset 0 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.proje-logo {
+    width: 60px; /* Logolar için sabit genişlik */
+    height: 60px; /* Logolar için sabit yükseklik */
+    flex-shrink: 0; /* Ekran küçülse bile logo küçülmesin */
+    background-color: rgba(255, 255, 255, 0.9); /* Şeffaf logoların görünmesi için */
+    border-radius: 8px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.proje-logo img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.proje-detay {
+    flex: 1; /* Kalan tüm boşluğu kapla */
+}
+
+.proje-detay h3 {
     font-size: 1.5rem;
     color: var(--accent-gold);
     margin-bottom: 5px;
+    margin-top: 0;
 }
 
-.proje-tarih {
+.proje-detay .proje-tarih {
     font-size: 0.9rem;
     color: var(--text-light);
     margin-bottom: 20px;
 }
 
-.proje-karti ul {
+.proje-detay ul {
     padding-left: 20px;
+    margin-top: 0;
 }
 
 /* --- ANASAYFA HARİTA STİLLERİ --- */
@@ -195,9 +321,125 @@ footer {
     border: 1px solid var(--border-color);
     border-radius: 10px;
     margin-top: 30px;
-    overflow: hidden; /* Yuvarlak köşeler için */
+    overflow: hidden;
 }
 
-/* ======================================================= */
-/* === EKSİK OLAN VE YENİ EKLENEN STİLLER BİTİŞ === */
-/* ======================================================= */
+/* --- KAYDIRMA ANİMASYONLARI --- */
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- HARİTA BİLGİ PENCERESİ (POPUP) STİLLERİ --- */
+.ol-popup {
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+    bottom: 12px;
+    left: -50px;
+    min-width: 200px;
+    color: #333; /* Popup yazı rengi */
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+}
+.ol-popup:after, .ol-popup:before {
+    top: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+.ol-popup:after {
+    border-top-color: white;
+    border-width: 10px;
+    left: 48px;
+    margin-left: -10px;
+}
+.ol-popup:before {
+    border-top-color: #cccccc;
+    border-width: 11px;
+    left: 48px;
+    margin-left: -11px;
+}
+
+/* --- HARİTA BİLGİ PENCERESİ (POPUP) GÜNCEL STİLLERİ --- */
+.ol-popup {
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+    bottom: 12px;
+    left: -50px;
+    min-width: 220px;
+    color: #333;
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    text-align: center;
+}
+.ol-popup:after, .ol-popup:before {
+    top: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+.ol-popup:after {
+    border-top-color: white;
+    border-width: 10px;
+    left: 48px;
+    margin-left: -10px;
+}
+.ol-popup:before {
+    border-top-color: #cccccc;
+    border-width: 11px;
+    left: 48px;
+    margin-left: -11px;
+}
+.ol-popup-closer {
+    text-decoration: none;
+    position: absolute;
+    top: 2px;
+    right: 8px;
+}
+.ol-popup-closer:after {
+    content: "✖";
+    color: #c3c3c3;
+}
+
+/* POPUP İÇİNDEKİ GÖRSEL İÇİN YENİ STİL */
+.popup-image {
+    /* Genişlik popup'ın genişliğiyle aynı kalsın */
+    width: 100%;
+
+    /* Yüksekliği otomatik yapıyoruz ama bir üst sınır koyuyoruz */
+    height: auto;
+    max-height: 150px; /* Görselin en fazla 150px yüksekliğinde olmasını sağlar */
+
+    /* Sihirli Kısım: Kırpma yerine sığdırma */
+    object-fit: contain; /* Resmi bozmadan, tamamını bu alana sığdırır */
+
+    /* Estetik dokunuşlar */
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#popup-content p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}

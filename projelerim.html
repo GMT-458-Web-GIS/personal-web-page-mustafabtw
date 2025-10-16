@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="css/stil.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <header class="page-header">
-            <h1>Staj Deneyimleri ve Projeler</h1>
+            <div class="header-icerik">
+                <h1>Staj Deneyimleri ve Projeler</h1>
+            </div>
             <nav>
                 <ul>
                     <li><a href="index.html">Anasayfa</a></li>
@@ -23,27 +25,51 @@
         </header>
 
         <main>
-            <section id="staj-deneyimleri">
-                <p>Eğitim hayatım boyunca edindiğim teorik bilgileri pratiğe döktüğüm ve önemli tecrübeler kazandığım stajlarım aşağıda detaylandırılmıştır.</p>
+            <section id="staj-deneyimleri" class="hidden">
+                <p>Eğitim hayatım boyunca edindiğim teorik bilgileri pratiğe döktüğüm projeler ve önemli tecrübeler kazandığım stajlarım aşağıda detaylandırılmıştır.</p>
 
                 <div class="proje-karti">
-                    <h3>Yaz Mühendisliği Stajyeri - Öksüt Madencilik</h3>
-                    <p class="proje-tarih">Ağustos 2024 - Eylül 2024 | Develi/Kayseri</p>
-                    <ul>
-                        <li>Maden sahasında drone ile haritalama ve veri toplama çalışmaları yürüttüm.</li>
-                        <li>Cevher kontrolü ve altyapı uygulamalarını gerçekleştirdim.</li>
-                        <li>Total Station ve GNSS cihazları kullanarak su seviyesi ve deformasyon ölçümleri için hassas ölçümler aldım.</li>
-                        <li>AutoCAD Civil 3D ile yüzey modelleme ve yol tasarımı yaptım.</li>
-                    </ul>
+                    <div class="proje-logo">
+                        <img src="images/hacettepe-logo.png" alt="Hacettepe Üniversitesi Logosu">
+                    </div>
+                    <div class="proje-detay">
+                        <h3>Bitirme Projesi - Kısa Süreli MEO Uydu Yörünge Entegrasyonu</h3>
+                        <p class="proje-tarih">2024 - 2025 | Hacettepe Üniversitesi | Danışman: Doç. Dr. Kamil Teke</p>
+                        <ul>
+                            <li>GPS uydularının kısa süreli yörüngelerini hassas bir şekilde tahmin etmek için bir yazılım aracı geliştirildi.</li>
+                            <li>Yörünge hareketini etkileyen bozucu faktörler dikkate alındı.</li>
+                            <li>Sayısal entegrasyon için Runge-Kutta metodu gibi ileri hesaplama teknikleri kullanıldı.</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="proje-karti">
-                    <h3>Yaz Mühendisliği Stajyeri - SNH İnşaat A.Ş.</h3>
-                    <p class="proje-tarih">Temmuz 2023 - Ağustos 2023 | Adana/Ceyhan</p>
-                    <ul>
-                        <li>Adana, Osmaniye ve Gaziantep'te yol tesviyesi, köprü inşaatı ve duvar kaplama gibi işlerde görev aldım.</li>
-                        <li>Şantiye ortamında Total Station ve GPS kullanarak ekibimle birlikte saha çalışmalarını yürüttüm.</li>
-                    </ul>
+                    <div class="proje-logo">
+                        <img src="images/oksut-logo.jpg" alt="Öksüt Madencilik Logosu">
+                    </div>
+                    <div class="proje-detay">
+                        <h3>Yaz Mühendisliği Stajyeri - Öksüt Madencilik</h3>
+                        <p class="proje-tarih">Ağustos 2024 - Eylül 2024 | Develi/Kayseri</p>
+                        <ul>
+                            <li>Maden sahasında drone ile haritalama ve veri toplama çalışmaları yürüttüm.</li>
+                            <li>Total Station ve GNSS cihazları kullanarak hassas ölçümler aldım.</li>
+                            <li>AutoCAD Civil 3D ile yüzey modelleme ve yol tasarımı yaptım.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="proje-karti">
+                    <div class="proje-logo">
+                        <img src="images/snh-logo.png" alt="SNH İnşaat Logosu">
+                    </div>
+                    <div class="proje-detay">
+                        <h3>Yaz Mühendisliği Stajyeri - SNH İnşaat A.Ş.</h3>
+                        <p class="proje-tarih">Temmuz 2023 - Ağustos 2023 | Adana/Ceyhan</p>
+                        <ul>
+                            <li>Yol tesviyesi, köprü inşaatı ve duvar kaplama gibi işlerde görev aldım.</li>
+                            <li>Şantiye ortamında Total Station ve GPS kullanarak saha çalışmalarını yürüttüm.</li>
+                        </ul>
+                    </div>
                 </div>
             </section>
         </main>
@@ -52,5 +78,6 @@
             <p>© 2025 Mustafa Baran. Tüm hakları saklıdır.</p>
         </footer>
     </div>
+    <script src="js/animasyon.js" defer></script>
 </body>
 </html>

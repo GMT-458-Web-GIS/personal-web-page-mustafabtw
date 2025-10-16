@@ -8,24 +8,23 @@
     <link rel="stylesheet" href="css/stil.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <div class="container">
         <header class="hero">
             <div class="hero-left">
                 <div class="hero-content">
                     <h1>Mustafa Baran</h1>
                     <p class="subtitle">Geomatik Mühendisi & Geliştirici</p>
-                    <nav>
-                        <ul>
-                            <li><a href="index.html">Anasayfa</a></li>
-                            <li><a href="teknolojiler.html">Yetenekler</a></li>
-                            <li><a href="projelerim.html">Projeler</a></li>
-                        </ul>
-                    </nav>
                 </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Anasayfa</a></li>
+                        <li><a href="teknolojiler.html">Yetenekler</a></li>
+                        <li><a href="projelerim.html">Projeler</a></li>
+                    </ul>
+                </nav>
             </div>
             <div class="hero-right">
                 <img src="images/hero-image.jpg" alt="Uzay temalı dikey görsel">
@@ -33,14 +32,17 @@
         </header>
 
         <main>
-            <section id="hakkimda">
+            <section id="hakkimda" class="hidden">
                 <h2>Hakkımda</h2>
                 <p>
-                    Öğrenim sürecim boyunca stajlar ve farklı projelerle pratik deneyim kazandım. Özellikle Python, QGIS ve AutoCAD Civil3D gibi modern teknolojileri kullanarak coğrafi veri analizi ve modelleme konularında kendimi geliştiriyorum. Amacım, bu yeteneklerimi kullanarak yenilikçi projelere katkıda bulunmak ve alanımda uzmanlaşmaktır.
+                    24 Aralık 2003'te Bandırma'da başlayan yolculuğum, Ankara'da aldığım ilk ve orta öğrenimin ardından Kurtuluş Anadolu Lisesi'nde devam etti. Şu anda Hacettepe Üniversitesi Geomatik Mühendisliği bölümünde, mühendislik tutkumu akademik bir kariyere dönüştürüyorum. Eğitimim süresince stajlar ve bitirme projem aracılığıyla Python, QGIS ve AutoCAD Civil3D gibi modern teknolojilerle pratik deneyim kazandım. Amacım, bu yeteneklerimi kullanarak yenilikçi projelere katkıda bulunmak ve alanımda uzmanlaşmaktır.
+                </p>
+                <p>
+                    Teknik uğraşlarımın yanı sıra, spor ve kişisel gelişime faydası amacıyla Basketbol, Jui-Jitsu ve Kick Box gibi sporlarla ilgilendim. Aynı zamanda sinema ve amatör fotoğrafçılık, büyük tutkularım arasında. Kariyer hedefim, bakış açımı uluslararası bir platforma taşımak ve mezuniyet sonrası yurt dışında, hem mesleğimi icra ettiğim hem de kişisel ilgi alanlarıma zaman ayırabildiğim dengeli ve sakin bir hayat kurmaktır.
                 </p>
             </section>
             
-            <section id="iletisim">
+            <section id="iletisim" class="hidden">
                 <h2>İletişim & Konum</h2>
                  <ul>
                     <li><strong>E-posta:</strong> mustafabarran5@gmail.com</li>
@@ -55,9 +57,13 @@
         </footer>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/ol/dist/ol.js"></script>
-    
-    <script src="js/harita.js" defer></script>
+    <div id="popup" class="ol-popup">
+      <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+      <div id="popup-content"></div>
+    </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/ol/dist/ol.js"></script>
+    <script src="js/harita.js" defer></script>
+    <script src="js/animasyon.js" defer></script>
 </body>
 </html>
