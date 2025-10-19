@@ -182,8 +182,7 @@ nav li:nth-child(2)::after {
 
 /* --- ANA İÇERİK STİLLERİ --- */
 main {
-    /* Üst boşluğu 80px'den 40px'e düşürdük, alt boşluk aynı kaldı */
-    padding: 40px 0 80px 0;
+    padding: 40px 0 40px 0; 
 }
 
 section {
@@ -210,6 +209,29 @@ footer {
     text-align: center;
     padding: 40px 0;
     border-top: 1px solid var(--border-color);
+    margin-top: 20px; /* Üst boşluğu 20px'e düşürdük */
+}
+
+.social-icons {
+    margin-bottom: 20px; /* İkonlarla yazı arasına boşluk */
+}
+
+.social-icons a {
+    color: var(--text-light); /* İkon rengi */
+    font-size: 1.8rem; /* İkon boyutu */
+    margin: 0 15px; /* İkonlar arasına boşluk (birden fazla olursa) */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--accent-gold); /* Üzerine gelince altın rengi */
+    transform: scale(1.1); /* Hafifçe büyüt */
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-light); /* Yazı rengini tekrar belirttik */
 }
 
 /* --- İÇ SAYFA HEADER STİLLERİ --- */
@@ -253,6 +275,17 @@ footer {
     background-color: #fff;
     border-radius: 8px;
     padding: 5px;
+}
+
+/* YETENEKLER TABLOSU SATIR HOVER EFEKTİ */
+.yetenek-tablosu tbody tr {
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Yumuşak geçiş animasyonu */
+}
+
+.yetenek-tablosu tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05); /* Arka planı çok hafif aydınlat */
+    transform: translateY(-3px); /* Satırı 3 piksel yukarı kaldır */
+    cursor: default; /* İmlecin normal kalmasını sağla (link değil) */
 }
 
 /* --- PROJELER SAYFASI KART STİLLERİ --- */
