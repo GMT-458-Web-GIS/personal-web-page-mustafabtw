@@ -2,7 +2,7 @@
 
 Bu proje, Hacettepe Üniversitesi GMT 458 Web GIS dersi kapsamında geliştirilmiş kişisel bir portfolyo web sitesidir. HTML, CSS ve JavaScript kullanılarak oluşturulmuş, OpenLayers ile interaktif harita özellikleri eklenmiş ve modern web tasarım prensipleriyle estetik bir görünüm kazandırılmıştır.
 
-**Canlı Demo:** [Sitenin Canlı Halini Görüntüle](https://gmt-458-web-gis.github.io/personal-web-page-mustafabtw/) 
+**Canlı Demo:** [Sitenin Canlı Halini Görüntüle](https://mustafabtw.github.io/personal_web_page_webgis_mustafa_baran/) 
 
 ---
 
