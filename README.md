@@ -1,61 +1,62 @@
-# GMT 458 - Kişisel Web Portfolyo Sayfası: Mustafa Baran
+# GMT 458 - Personal Web Portfolio: Mustafa Baran
 
-Bu proje, Hacettepe Üniversitesi GMT 458 Web GIS dersi kapsamında geliştirilmiş kişisel bir portfolyo web sitesidir. HTML, CSS ve JavaScript kullanılarak oluşturulmuş, OpenLayers ile interaktif harita özellikleri eklenmiş ve modern web tasarım prensipleriyle estetik bir görünüm kazandırılmıştır.
+This project is a personal portfolio website developed as part of the GMT 458 Web GIS course at Hacettepe University. Built using HTML, CSS, and JavaScript, it features interactive map functionalities via OpenLayers and boasts a modern aesthetic guided by contemporary web design principles.
 
-**Canlı Demo:** [Sitenin Canlı Halini Görüntüle](https://mustafabtw.github.io/personal_web_page_webgis_mustafa_baran/) 
-
----
-
-## Proje Görünümü
-
-**Örnek Ekran Görüntüleri:**
-![Anasayfa Görünümü](images/screenshot-anasayfa.jpg)
-![Harita Detayı](images/screenshot-harita.jpg)
-![Yetenekler Tablosu](images/screenshot-yetenekler.jpg)
----
-
-## Temel Özellikler
-
-* **Modern & Fütüristik Tasarım:** Karanlık tema üzerine kurulu, Poppins fontu kullanılarak hazırlanmış, altın rengi (`#D4AF37`) vurgulara sahip minimalist ve şık bir arayüz.
-* **Asimetrik Hero Bölümü (Anasayfa):** Sol tarafta metin ve navigasyon, sağ tarafta ise kenarları yumuşatılmış dikey bir Ay görseli bulunan etkileyici bir karşılama ekranı.
-* **Takım Yıldızı Navigasyonu:** Sayfalar arası geçişi sağlayan linkler, statik bir menü yerine, parlayan yıldızlar ve onları birleştiren çizgilerden oluşan tematik bir takım yıldızı şeklinde tasarlanmıştır.
-* **Çok Sayfalı Yapı:** Site, "Anasayfa", "Yetenekler" ve "Projeler" olmak üzere üç ana bölümden oluşmaktadır.
-* **İnteraktif OpenLayers Haritası:** Anasayfada yer alan harita, OpenStreetMap altlığı üzerinde benim kişisel konumunu (Ankara) ve staj yaptığım yerleri (Kayseri, Adana) özel ikonlarla göstermektedir.
-    * **Resimli Pop-up'lar:** Staj yeri ikonlarına tıklandığında, ilgili yerin fotoğrafını ve bilgisini içeren bilgilendirme pencereleri açılır. Görseller, popup içine kırpılmadan sığdırılmıştır.
-* **Resimli Yetenekler Tablosu:** "Yetenekler" sayfasında, kullanılan teknolojiler (Python, QGIS, AutoCAD Civil 3D) logolarıyla birlikte listelenmiştir.
-* **Logolu Proje Kartları:** "Projeler" sayfasında, bitirme projesi ve staj deneyimleri, ilgili kurumların logolarıyla birlikte (Hacettepe, Öksüt, SNH) modern kartlar içinde sunulmuştur.
-* **Kaydırma Animasyonları:** Sayfa aşağı kaydırıldıkça içerik bölümlerinin (`section`) yumuşak bir animasyonla ekrana gelmesi sağlanmıştır.
-* **Mikro-Etkileşimler:** Navigasyon linkleri, tablo satırları ve proje kartları gibi elementlere, kullanıcı etkileşimini artıran hover (üzerine gelme) efektleri eklenmiştir.
-* **Geliştirilmiş Footer:** Sayfa altında LinkedIn profilime yönlendiren bir sosyal medya ikonu bulunmaktadır.
-* **Özel Favicon:** Tarayıcı sekmesinde siteyi temsil eden özel bir ikon kullanılmıştır.
+**Live Demo:** [View the Live Site](https://mustafabtw.github.io/personal_web_page_webgis_mustafa_baran/) 
 
 ---
 
-## Kullanılan Teknolojiler
+## Project Preview
 
-* **HTML5:** Sayfa yapısı ve içeriği.
-* **CSS3:** Tasarım, yerleşim, animasyonlar ve modern estetik (Flexbox, CSS Değişkenleri, Maskeleme, `object-fit`).
-* **JavaScript (Vanilla JS):** Kaydırma animasyonları (`IntersectionObserver`) ve OpenLayers haritasının dinamik işlevleri (ikon ekleme, pop-up yönetimi).
-* **OpenLayers:** İnteraktif harita oluşturma ve yönetimi.
-* **Google Fonts (Poppins):** Modern ve okunaklı yazı tipi.
-* **FontAwesome:** Sosyal medya ikonları.
-* **Git & GitHub:** Versiyon kontrolü ve projenin barındırılması.
-* **GitHub Pages:** Projenin canlı olarak yayınlanması.
+**Example Screenshot Code (Replace these lines with your actual images):**
+`![Homepage View](images/screenshot-anasayfa.jpg)`
+`![Map Detail](images/screenshot-harita.jpg)`
+`![Skills Table](images/screenshot-yetenekler.jpg)`
 
 ---
 
-## Yapay Zeka (AI) Kullanım Raporu
+## Core Features
 
-Bu projenin geliştirilmesi sırasında, karşılaşılan zorlukları aşmak ve modern web tekniklerini öğrenmek amacıyla Yapay Zeka (AI) kodlama asistanından destek alındı. Temel HTML/CSS yapısı ve içerik yerleşimi tarafımca yapılmış olup, AI daha çok aşağıdaki spesifik ve ileri seviye konularda bir "eğitmen" rolü üstlenmiştir:
+* **Modern & Futuristic Design:** A minimalist and sleek interface built on a dark theme using the Poppins font, accented with a gold color (`#D4AF37`).
+* **Asymmetric Hero Section (Homepage):** An engaging landing view featuring text, navigation, and a profile picture on the left, complemented by a vertically oriented Moon image with softened edges on the right.
+* **Constellation Navigation:** Links for page navigation are designed as a thematic constellation, with glowing stars connected by lines, instead of a static menu.
+* **Multi-Page Structure:** The site comprises three main sections: "Home," "Skills," and "Projects."
+* **Interactive OpenLayers Map:** The homepage features a map centered on Turkey, displaying the user's personal location (Ankara) and internship locations (Kayseri, Adana) with custom icons on an OpenStreetMap base layer.
+    * **Illustrated Pop-ups:** Clicking on internship icons opens informative pop-up windows containing relevant photos and details. Images are fitted (`object-fit: contain`) within the pop-up without cropping.
+* **Skills Table with Images:** The "Skills" page lists used technologies (Python, QGIS, AutoCAD Civil 3D) along with their respective logos in a structured table.
+* **Project Cards with Logos:** The "Projects" page showcases the graduation project and internship experiences within modern cards, each featuring the logo of the corresponding institution (Hacettepe, Öksüt, SNH).
+* **Scroll Animations:** Content sections (`section`) gently fade and slide into view as the user scrolls down the page, implemented using the `IntersectionObserver` API.
+* **Micro-interactions:** Hover effects are added to navigation links, table rows, and project cards to enhance user interaction and provide visual feedback.
+* **Enhanced Footer:** Includes a social media icon linking to the user's LinkedIn profile.
+* **Custom Favicon:** A custom icon represents the site in browser tabs.
 
-* **Öğrenilen Kilit Konular:**
-    * Kaydırma Animasyonları (`IntersectionObserver` API).
-    * İnteraktif Harita Geliştirmeleri (Özel ikonlar, **resimli pop-up'lar**).
-    * İleri Düzey CSS Teknikleri (`mask-image`, `object-fit`, takım yıldızı navigasyonu).
-* **Hatırlatılan veya Hızlandırılan Süreçler:**
-    * CSS Flexbox kullanımı.
-    * Basit kodlama hatalarının (dosya yolları, etiket kapatma) tespiti.
-* **Tahmini AI Kullanım Süresi:**
-    * Bu projede, özellikle yukarıda belirtilen ileri seviye konuların öğrenilmesi ve uygulanması için yaklaşık olarak 1 saat boyunca Yapay Zeka asistanı ile birlikte çalışılmıştır.
+---
+
+## Technologies Used
+
+* **HTML5:** Structure and content of the web pages.
+* **CSS3:** Styling, layout, animations, and modern aesthetics (Flexbox, CSS Variables, Masking, `object-fit`).
+* **JavaScript (Vanilla JS):** Scroll animations (`IntersectionObserver`) and dynamic functionalities of the OpenLayers map (adding features, pop-up management).
+* **OpenLayers:** Creation and management of the interactive map.
+* **Google Fonts (Poppins):** Modern and readable typography.
+* **FontAwesome:** Social media icons.
+* **Git & GitHub:** Version control and project hosting.
+* **GitHub Pages:** Live deployment of the website.
+
+---
+
+## Artificial Intelligence (AI) Usage Report
+
+During the development of this project, support was sought from an Artificial Intelligence (AI) coding assistant to overcome challenges and learn modern web techniques. While the fundamental HTML/CSS structure and content placement were handled independently, the AI primarily served as a "tutor" for the following specific and advanced topics:
+
+* **Key Concepts Learned from AI:**
+    * **Scroll Animations:** Utilizing the `IntersectionObserver` API with JavaScript to make content sections appear smoothly upon scrolling.
+    * **Interactive Map Enhancements:** Understanding the logic behind adding custom icons and **pop-up windows containing both text and images** to a standard OpenLayers map.
+    * **Advanced CSS Techniques:** Implementing `mask-image` to blend image edges softly into the background (vignette effect) and using `object-fit` for proper image scaling within containers. Conceptualizing and implementing the constellation navigation using `position: absolute` and pseudo-elements (`::before`, `::after`).
+* **Processes Reminded or Expedited:**
+    * Reminders on using CSS Flexbox for creating and aligning complex layouts more quickly.
+    * Faster identification of simple coding errors like incorrect file paths (`.jpg` vs. `.jpeg`) or improperly closed HTML tags.
+* **Estimated AI Usage Time:**
+    * Throughout this project, the AI assistant was consulted for approximately 1 hour, particularly for learning and implementing the advanced topics mentioned above.
 
 ---
