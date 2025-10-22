@@ -9,9 +9,9 @@ This project is a personal portfolio website developed as part of the GMT 458 We
 ## Project Preview
 
 **Example Screenshot Code (Replace these lines with your actual images):**
-`![Homepage View](images/screenshot-anasayfa.jpg)`
-`![Map Detail](images/screenshot-harita.jpg)`
-`![Skills Table](images/screenshot-yetenekler.jpg)`
+`!images/screenshot-anasayfa.jpg)`
+`!(images/screenshot-harita.jpg)`
+`!(images/screenshot-yetenekler.jpg)`
 
 ---
 
