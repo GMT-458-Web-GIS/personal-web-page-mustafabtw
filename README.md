@@ -8,11 +8,11 @@ This project is a personal portfolio website developed as part of the GMT 458 We
 
 ## Project Preview
 
-**Example Screenshot Code (Replace these lines with your actual images):**
-`!images/screenshot-anasayfa.jpg)`
-`!(images/screenshot-harita.jpg)`
-`!(images/screenshot-yetenekler.jpg)`
+![Homepage View](images/screenshot-anasayfa.jpg)
 
+![Map Detail](images/screenshot-harita.jpg)
+
+![Skills Table](images/screenshot-yetenekler.jpg)
 ---
 
 ## Core Features
@@ -55,7 +55,6 @@ During the development of this project, support was sought from an Artificial In
     * **Advanced CSS Techniques:** Implementing `mask-image` to blend image edges softly into the background (vignette effect) and using `object-fit` for proper image scaling within containers. Conceptualizing and implementing the constellation navigation using `position: absolute` and pseudo-elements (`::before`, `::after`).
 * **Processes Reminded or Expedited:**
     * Reminders on using CSS Flexbox for creating and aligning complex layouts more quickly.
-    * Faster identification of simple coding errors like incorrect file paths (`.jpg` vs. `.jpeg`) or improperly closed HTML tags.
 * **Estimated AI Usage Time:**
     * Throughout this project, the AI assistant was consulted for approximately 1 hour, particularly for learning and implementing the advanced topics mentioned above.
 
